@@ -1,5 +1,4 @@
 FROM ubuntu
-EXPOSE 1883
 
 RUN apt-get update
 RUN apt-get -y install wget
@@ -12,5 +11,6 @@ RUN wget http://repo.mosquitto.org/debian/mosquitto-jessie.list
 RUN apt-get update
 RUN apt-get -y install mosquitto
 
-RUN /usr/sbin/mosquitto
+EXPOSE 1883
+CMD ["/usr/sbin/mosquitto"]
 

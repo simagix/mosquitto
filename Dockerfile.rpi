@@ -1,5 +1,4 @@
 FROM hypriot/rpi-node:4
-EXPOSE 1883
 
 RUN wget http://repo.mosquitto.org/debian/mosquitto-repo.gpg.key
 RUN apt-key add mosquitto-repo.gpg.key
@@ -10,5 +9,6 @@ RUN wget http://repo.mosquitto.org/debian/mosquitto-jessie.list
 RUN apt-get update
 RUN apt-get install mosquitto
 
-RUN /usr/sbin/mosquitto
+EXPOSE 1883
+CMD ["/usr/sbin/mosquitto"]
 
