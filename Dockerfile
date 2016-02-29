@@ -12,5 +12,5 @@ RUN wget http://repo.mosquitto.org/debian/mosquitto-jessie.list
 RUN apt-get update
 RUN apt-get -y install mosquitto
 
-RUN service mosquitto start
+RUN /usr/sbin/mosquitto
 
